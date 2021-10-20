@@ -26,7 +26,14 @@ public function index(User $user, $following)
 
 public function store(Request $request, User $user)
 {
-    Auth::user()->follow($user);
+    // if(Auth::user()->hasFollow($user)){
+    //     Auth::user()->unfollow($user);
+    // } else {
+    //     Auth::user()->follow($user);
+    // }
+
+    Auth::user()->hasFollow($user) ?  Auth::user()->unfollow($user) :  Auth::user()->follow($user);
+ 
     return back()->with('success', 'You Are Follow User');
 }
 
