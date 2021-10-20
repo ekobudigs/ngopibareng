@@ -15,9 +15,9 @@
                     <x-nav-link :href="route('timeline')" :active="request()->routeIs('timeline')">
                         {{ __('Timeline') }}
                     </x-nav-link>
-                    <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
                         {{ __('User Explore') }}
-                    </x-responsive-nav-link>
+                    </x-nav-link>
                 </div>
             </div>
 
