@@ -35,6 +35,8 @@
                 </div>
 
             </div>
+
+            @if (Auth::user()->follows()->count())
             <div class="col-span-5">
                 <div class="border p-5 rounded-xl">
                     <h1 class="font-semibold mb-5">
@@ -46,6 +48,9 @@
                     </div>
                 </div>
             </div>
+                
+            @endif
+
         </div>
     </x-container>
 </x-app-layout>
