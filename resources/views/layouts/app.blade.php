@@ -20,6 +20,17 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-white-100">
+
+        @if (session()->has('message'))
+            <div class="bg-green-500 text-white p-4">
+                <x-container>
+                    {{ session('message') }}
+                </x-container>
+            </div>
+        @endif
+
+
+
         @include('layouts.navigation')
 
         @isset($header)
