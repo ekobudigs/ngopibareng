@@ -43,9 +43,7 @@
 
                         <x-slot name="content">
 
-                            <x-dropdown-link href="{{ route('profile', Auth::user()->username) }}">
-                                View Profile
-                            </x-dropdown-link>
+                            
                             <x-dropdown-link href="{{ route('profile.edit') }}">
                                 Edit Profile
                             </x-dropdown-link>
@@ -113,9 +111,7 @@
 
                 <div class="mt-3 space-y-1">
 
-                    <x-responsive-nav-link href="{{ route('profile', Auth::user()->username) }}">
-                        View Profile
-                    </x-responsive-nav-link>
+                
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TimelineController;
 use App\Http\Controllers\WellcomeController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FollowingController;
 use App\Http\Controllers\ExploreUserController;
 use App\Http\Controllers\UpdatePasswordController;
@@ -11,9 +13,10 @@ use App\Http\Controllers\ProfileInformationController;
 use App\Http\Controllers\UpdateProfileInformationController;
 
 Route::middleware('auth')->group(function () {
-    Route::get('explore', ExploreUserController::class)->name('users.index');
-    Route::get('/timeline', TimelineController::class)->name('timeline');
+    // Route::get('explore', [UserController::class, 'index'])->name('users.index');
+    Route::get('/timeline', [DashboardController::class, 'index'])->name('timeline');
     Route::post('/status', [StatusController::class, 'store'])->name('statuses.store');
+    Route::resource('users', UserController::class);
 
     Route::prefix('profile')->group(function () {
 
